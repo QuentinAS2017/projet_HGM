@@ -1,4 +1,4 @@
-//Fichier MainActivity.cs dans Xamarin : permet le gestion des vues
+//Fichier MainActivity.cs dans Xamarin : permet la gestion des vues
 
 using Android.App;
 using Android.Widget;
