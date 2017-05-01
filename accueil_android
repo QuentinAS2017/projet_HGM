@@ -1,0 +1,71 @@
+//Fichier MainActivity.cs dans Xamarin : permet le gestion des vues
+
+using Android.App;
+using Android.Widget;
+using Android.OS;
+
+namespace HappyGrandMother
+{
+    [Activity(Label = "Accueil ☺", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Notification); //On choisit ici la page à afficher
+            // SetContentView (Resource.Layout.Main);
+        }
+    }
+}
+
+
+//Fichier Notification.axml qui contient le code pour une première vue de notification
+
+<?xml version="1.0" encoding="utf-8"?>
+
+//Conteneur principal de la page
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    //image du contact
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView1"
+        android:minHeight="70dp"
+        android:minWidth="50dp"
+        android:padding="10dp"
+        android:layout_width="wrap_content" />
+        
+    //Conteneur pour les informations de la notification    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="5dp">
+        
+        //Information du contact
+        <TextView
+            android:text="Prénom Nom"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1" />
+            
+        //Contexte de la notification
+        <TextView
+            android:text="C'est son anniversaire aujourd'hui !"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2" />
+    </LinearLayout>
+</LinearLayout>
